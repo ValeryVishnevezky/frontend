@@ -1,26 +1,86 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+@import 'tailwindcss';
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+	--font-sans: 'Google Sans', sans-serif;
+	--background: #ffffff;
+	--foreground: #353535;
+	--foreground-sec: #666666;
+	--primary: #548dd6;
+	--logo: #548dd6;
+	--hover-btn: #c0c0c023;
+	--hover-a: #222222;
+	--border: #22222212;
+	--shadow: #22222212;
+	--svg: #9ca3af;
+	--img-gradient: linear-gradient(to bottom right, #f3f4f6, #e5e7eb);
+	--in-stock-txt: #166534;
+	--out-of-stock-txt:#991b1b;
+	--in-stock-bg: #dcfce7;
+	--out-of-stock-bg:#fee2e2;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+[data-theme='dark'] {
+	--background: #222222;
+	--foreground: #ffffff;
+	--foreground-sec: #f0f0f0;
+	--primary: #1f335d;
+	--logo: #ffffff;
+	--hover-btn: #ffffff23;
+	--hover-a: #afafaf;
+	--border: #00000023;
+	--shadow: #00000053;
+	--svg: #4b5563;
+	--img-gradient: linear-gradient(to bottom right, #242b36, #111113);
+	--in-stock-txt: #4ade80;
+	--out-of-stock-txt:#f87171;
+	--in-stock-bg: #14532d;
+	--out-of-stock-bg:#7f1d1d;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+	color: var(--foreground);
+	background-color: var(--background);
+	font-family: var(--font-sans);
+	font-weight: 400;
+	font-size: 16px;
+	letter-spacing: 0.02rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+}
+
+p {
+	margin: 0;
+}
+
+.main-layout {
+	display: grid;
+	grid-template-columns: 40px 1fr 40px;
+    grid-template-rows: auto 1fr auto;
+	min-height: 100vh;
+
+	> *.full {
+		grid-column: 1 / -1;
+	}
+
+	> *:not(.full) {
+		grid-column: 2;
+	}
+}
+
+@media (max-width: 700px) {
+	.main-layout {
+		grid-template-columns: 20px 1fr 20px;
+	}
 }
