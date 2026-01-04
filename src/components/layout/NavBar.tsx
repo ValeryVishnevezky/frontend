@@ -20,7 +20,6 @@ export default function NavBar() {
 		setUser(null)
 	}
 
-
 	return (
 		<nav className='nav-bar'>
 			<button className={'nav-link theme'} onClick={onToggleTheme}>
@@ -29,9 +28,16 @@ export default function NavBar() {
 			<Link href='/' className={`nav-link ${pathname === '/' ? 'active' : ''}`}>
 				Home
 			</Link>
-			<Link href='/orders' className={`nav-link ${pathname === '/orders' ? 'active' : ''}`}>
-				Orders
-			</Link>
+			{user && user?.isAdmin && (
+				<>
+					<Link href='/order' className={`nav-link ${pathname === '/order' ? 'active' : ''}`}>
+						Orders
+					</Link>
+					<Link href='/dashboard' className={`nav-link ${pathname === '/dashboard' ? 'active' : ''}`}>
+						Dashboard
+					</Link>
+				</>
+			)}
 			{user ? (
 				<div className='nav-user-actions'>
 					<button onClick={onLogout} className='logout'>

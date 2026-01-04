@@ -1,51 +1,33 @@
 import { Credentials } from '@/types/User'
+import { httpService } from './http.service'
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL
+const BASE_URL = 'auth/'
 
 export async function login(credentials: Credentials) {
-	const res = await fetch(`${BASE_URL}/auth/login`, {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		body: JSON.stringify(credentials),
-		credentials: 'include'
-	})
-
-	if (!res.ok) {
-		throw new Error('Login failed')
-	}
-
-	return res.json()
+    try {
+        const user = await httpService.post(BASE_URL + 'login', credentials)
+        return user
+    } catch (error) {
+        console.error('Could not login')
+        throw error
+    }
 }
 
 export async function signup(credentials: Credentials) {
-	const res = await fetch(`${BASE_URL}/auth/signup`, {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		body: JSON.stringify(credentials),
-		credentials: 'include'
-	})
-
-	if (!res.ok) {
-		throw new Error('Login failed')
-	}
-
-	return res.json()
+    try {
+        const user = await httpService.post(BASE_URL + 'signup', credentials)
+        return user
+    } catch (error) {
+        console.error('Could not signup')
+        throw error
+    }
 }
 
 export async function logout() {
-	const res = await fetch(`${BASE_URL}/auth/logout`, {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		credentials: 'include'
-	})
-
-	if (!res.ok) {
-		throw new Error('Login failed')
-	}
+    try {
+        await httpService.post(BASE_URL + 'logout')
+    } catch (error) {
+        console.error('Could not logout')
+        throw error
+    }
 }

@@ -1,9 +1,13 @@
 import ProductList from '@/components/ui/ProductList'
+import { query } from '@/services/product-service'
+import { Product } from '@/types/Product'
 
-export default async function Products() {
+export default async function ProductsIndex() {
+	const products: Product[] = await query()
+	
 	return (
 		<div className='container mx-auto py-8'>
-			<ProductList />
+			<ProductList products={products} />
 		</div>
 	)
 }
