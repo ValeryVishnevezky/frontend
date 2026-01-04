@@ -49,18 +49,58 @@ header {
 			}
 		}
 
-		.login {
+		.nav-user-actions {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			margin-inline-start: 20px;
 
+			.user-img-container {
+				width: 40px;
+				border-radius: 50%;
+				border: 1px solid var(--logo);
+				overflow: hidden;
+
+				img {
+					border-radius: 50%;
+				}
+			}
+
+			.logout {
+				color: var(--logo);
+			}
 		}
 
-		.theme{
+		.theme {
 			padding: 8px;
 			border-radius: 50%;
 			margin-inline-end: 10px;
 			cursor: pointer;
 
-			svg{
+			svg {
 				/* fill: var(--foreground-sec); */
+			}
+		}
+
+		.auth-actions {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			margin-inline-start: 20px;
+
+			.login {
+				color: var(--foreground);
+			}
+
+			.signup {
+				padding: 5px 15px;
+				border-radius: 0.3rem;
+				color: var(--background);
+				background-color: var(--logo);
+
+				&:hover {
+					opacity: 0.8;
+				}
 			}
 		}
 	}

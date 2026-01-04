@@ -4,11 +4,14 @@
 :root {
 	--font-sans: 'Google Sans', sans-serif;
 	--background: #ffffff;
+	--background-form: #ffffff;
+	--background-input: #ffffff;
 	--foreground: #353535;
 	--foreground-sec: #666666;
 	--primary: #548dd6;
 	--logo: #548dd6;
 	--hover-btn: #c0c0c023;
+	--hover-auth-btn: #548dd6;
 	--hover-a: #222222;
 	--border: #22222212;
 	--shadow: #22222212;
@@ -22,11 +25,14 @@
 
 [data-theme='dark'] {
 	--background: #222222;
+	--background-form: #3e3e3e;
+	--background-input: #4f4f4f;
 	--foreground: #ffffff;
 	--foreground-sec: #f0f0f0;
 	--primary: #1f335d;
 	--logo: #ffffff;
 	--hover-btn: #ffffff23;
+	--hover-auth-btn: #ffffff23;
 	--hover-a: #afafaf;
 	--border: #00000023;
 	--shadow: #00000053;

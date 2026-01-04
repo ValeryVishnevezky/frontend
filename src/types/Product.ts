@@ -11,3 +11,11 @@ export type Product = {
 export type ProductProps = {
 	product: Product
 }
+
+export interface ProductFilter {
+	txt?: string
+	minPrice?: number
+	maxPrice?: number
+	category?: string
+	inStock?: string
+}
