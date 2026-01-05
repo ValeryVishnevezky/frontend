@@ -8,14 +8,11 @@ export type Product = {
 	imgUrl?: string | null
 }
 
-export type ProductProps = {
-	product: Product
-}
-
 export interface ProductFilter {
 	txt?: string
 	minPrice?: number
 	maxPrice?: number
 	category?: string
 	inStock?: string
+	[key: string]: string | number | boolean | object | undefined
 }

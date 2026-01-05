@@ -10,14 +10,47 @@ const axiosRequest = axios.create({
 axiosRequest.interceptors.response.use(
 	res => res,
 	err => {
-		if (err.response?.status === 401) sessionStorage.clear()
 		return Promise.reject(err)
 	}
 )
 
-export const httpService = {
-	get: <T = any>(url: string, params?: Record<string, any>) => axiosRequest.get<T>(url, { params }).then(res => res.data),
-	post: <T = any>(url: string, data?: any) => axiosRequest.post<T>(url, data).then(res => res.data),
-	put: <T = any>(url: string, data?: any) => axiosRequest.put<T>(url, data).then(res => res.data),
-	delete: <T = any>(url: string, data?: any) => axiosRequest.delete<T>(url, { data }).then(res => res.data)
+export async function get<T>(url: string, params?: Record<string, string | number | boolean | object | undefined>, headers?: Record<string, string>): Promise<T> {
+	try {
+		const res = await axiosRequest.get<T>(url, { params, headers })
+		if (res.status >= 400) throw new Error(`GET ${url} failed: ${res.status}`)
+		return res.data
+	} catch (error) {
+		throw error
+	}
+}
+
+export async function post<T>(url: string, data?: any, headers?: Record<string, string>): Promise<T> {
+	try {
+		const res = await axiosRequest.post<T>(url, data, { headers })
+		if (res.status >= 400) throw new Error(`POST ${url} failed: ${res.status}`)
+		console.log('res.data', res)
+		return res.data
+	} catch (error) {
+		throw error
+	}
+}
+
+export async function put<T>(url: string, data?: any, headers?: Record<string, string>): Promise<T> {
+	try {
+		const res = await axiosRequest.put<T>(url, data, { headers })
+		if (res.status >= 400) throw new Error(`PUT ${url} failed: ${res.status}`)
+		return res.data
+	} catch (error) {
+		throw error
+	}
+}
+
+export async function remove<T>(url: string, headers?: Record<string, string>): Promise<T> {
+	try {
+		const res = await axiosRequest.delete<T>(url, { headers })
+		if (res.status >= 400) throw new Error(`DELETE ${url} failed: ${res.status}`)
+		return res.data
+	} catch (error) {
+		throw error
+	}
 }

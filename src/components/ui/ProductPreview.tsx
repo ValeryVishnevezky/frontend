@@ -1,9 +1,9 @@
 import '@/assets/styles/components/ProductList.css'
 import { ImagePlaceholder } from '../icons/ImagePlaceholder'
-import { ProductProps } from '@/types/Product'
+import { Product } from '@/types/product'
 import Image from 'next/image'
 
-export default function ProductPreview({ product }: ProductProps) {
+export default function ProductPreview({ product }: { product: Product }) {
 	return (
 		<div className='product-card'>
 			<div className='product-image-container'>

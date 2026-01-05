@@ -21,7 +21,3 @@ export interface Order {
 	totalPrice: number
 	createdAt: Date
 }
-
-export type OrderProps = {
-	order: Order
-}

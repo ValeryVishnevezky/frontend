@@ -46,7 +46,7 @@ export default function NavBar() {
 
 					<Link href='/profile' className='user'>
 						<div className='user-img-container'>
-							<Image src={user.imgUrl || 'https://res.cloudinary.com/dusecwxch/image/upload/v1767549373/5f7ce1fc-833c-4ebe-ae15-d07e58824e75_mrtdo6.jpg'} alt={user.fullname} width={40} height={40} />
+							<Image src={user.imgUrl || 'https://res.cloudinary.com/dusecwxch/image/upload/v1767549373/5f7ce1fc-833c-4ebe-ae15-d07e58824e75_mrtdo6.jpg'} alt={'Profile Image'} width={40} height={40} />
 						</div>
 					</Link>
 				</div>

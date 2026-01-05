@@ -23,14 +23,15 @@ export default function LoginSignupForm({ mode }: { mode: string }) {
 	async function handleSubmit(ev: React.FormEvent<HTMLFormElement>) {
 		ev.preventDefault()
 		try {
-			let response
+			let user
 			if (mode === 'login') {
-				response = await login(credentials)
+				user = await login(credentials)
 			} else {
-				response = await signup(credentials)
+				user = await signup(credentials)
 			}
 			
-			setUser(response.user)
+			console.log('user', user)
+			setUser(user)
 			setCredentials(getEmptyCredentials())
 			router.push('/')
 		} catch (err) {

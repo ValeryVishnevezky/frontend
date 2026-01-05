@@ -213,39 +213,6 @@
 	}
 }
 
-.order-list-empty {
-	align-self: center;
-	justify-self: center;
-
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	/* padding: 60px 20px; */
-	text-align: center;
-	color: var(--foreground-sec);
-	background-color: var(--background);
-	border-radius: 8px;
-
-	.order-list-empty-icon {
-		font-size: 4rem;
-		margin-bottom: 16px;
-		opacity: 0.5;
-	}
-
-	.order-list-empty-title {
-		font-size: 1.5rem;
-		font-weight: 600;
-		color: var(--foreground);
-		margin-bottom: 8px;
-	}
-
-	.order-list-empty-message {
-		font-size: 1rem;
-		color: var(--foreground-sec);
-	}
-}
-
 @media (max-width: 850px) {
 	.orders-container {
 		display: flex;

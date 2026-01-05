@@ -4,7 +4,7 @@ import { getTheme, toggleTheme, Theme } from '@/services/theme-service'
 
 export function useTheme() {
 	const [theme, setTheme] = useState<Theme | null>(null)
-	
+
 	useEffect(() => {
 		const userTheme = getTheme()
 		setTheme(userTheme)

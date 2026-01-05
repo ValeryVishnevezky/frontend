@@ -1,9 +1,9 @@
 import '@/assets/styles/components/OrderList.css'
 import { ImagePlaceholder } from '../icons/ImagePlaceholder'
-import { OrderProps } from '@/types/Order'
+import { Order } from '@/types/order'
 import Image from 'next/image'
 
-export default function OrderPreview({ order }: OrderProps) {
+export default function OrderPreview({ order }: { order: Order }) {
 	function formatDate(date: Date | string): string {
 		const orderDate = new Date(date)
 		return orderDate.toLocaleString('in-US', {
@@ -39,7 +39,6 @@ export default function OrderPreview({ order }: OrderProps) {
 						<span className='separator'>•</span>
 						<span className='order-product-price'>₪{order.product.price.toLocaleString('he-IL')}</span>
 					</div>
-
 				</div>
 			</div>
 

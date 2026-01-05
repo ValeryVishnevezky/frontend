@@ -126,3 +126,39 @@ p {
 	align-items: center;
 	justify-content: center;
 }
+
+.empty-container {
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	.list-empty {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		color: var(--foreground-sec);
+		background-color: var(--background);
+		border-radius: 8px;
+
+		.list-empty-icon {
+			font-size: 4rem;
+			margin-bottom: 16px;
+			opacity: 0.5;
+		}
+
+		.list-empty-title {
+			font-size: 1.5rem;
+			font-weight: 600;
+			color: var(--foreground);
+			margin-bottom: 8px;
+		}
+
+		.list-empty-message {
+			font-size: 1rem;
+			color: var(--foreground-sec);
+		}
+	}
+}

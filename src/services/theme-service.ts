@@ -26,9 +26,7 @@ export function getSystemTheme(): Theme {
   return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
 }
 
-export function setAppTheme(theme: Theme) {
-  if (typeof window === 'undefined') return 'light'
-
+function setAppTheme(theme: Theme) {
   const html = document.documentElement
   html.setAttribute('data-theme', theme)
   localStorage.setItem(THEME_KEY, theme)
