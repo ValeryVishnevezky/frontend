@@ -15,7 +15,7 @@
 		border: 1px solid var(--border);
 		color: var(--foreground);
 		background-color: var(--background-input);
-		transition: all 0.2s ease-in-out;
+		transition: all 0.3s ease-in-out;
 		outline: none;
 
 		&::placeholder {
@@ -39,12 +39,12 @@
 		border-radius: 0.3rem;
 		color: #ffffff;
 		background-color: var(--primary);
-		transition: all 0.2s ease-in-out;
+		transition: all 0.2s linear;
 		cursor: pointer;
 
 		&:hover {
 			opacity: 0.9;
-			box-shadow: 0 1px 8px var(--hover-auth-btn);
+			background-color: var(--hover-btn);
 		}
 
 		/* &:disabled {

@@ -4,8 +4,9 @@ import { Order } from '@/types/Order'
 
 export default async function OrdersIndex() {
 	const orders: Order[] = await query()
+	// const orders= null
 	return (
-		<div className='container mx-auto py-8'>
+		<div className='orders-container py-8 w-full'>
 			<OrderList orders={orders} />
 		</div>
 	)

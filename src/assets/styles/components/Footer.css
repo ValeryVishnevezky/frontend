@@ -35,7 +35,7 @@ footer {
 					color: var(--foreground-sec);
 					font-size: 0.9rem;
 					text-decoration: none;
-					transition: color 0.2s ease;
+					transition: all 0.3s ease-in-out;
 
 					&:hover {
 						color: var(--hover-a);

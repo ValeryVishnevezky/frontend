@@ -16,7 +16,7 @@ header {
 		justify-content: center;
 		cursor: pointer;
 		color: #222222;
-		transition: opacity 0.3s ease;
+		transition: all 0.3s ease-in-out;
 
 		h1 {
 			font-size: 1.6rem;
@@ -38,14 +38,14 @@ header {
 			padding: 5px 15px;
 			border-radius: 0.3rem;
 			color: var(--foreground-sec);
-			transition: all 0.3s ease;
+			transition: all 0.2s linear;
 
 			&:hover {
-				background-color: var(--hover-btn);
+				background-color: var(--hover-nav-btn);
 			}
 
 			&.active {
-				background-color: var(--hover-btn);
+				background-color: var(--hover-nav-btn);
 			}
 		}
 
@@ -110,6 +110,7 @@ header {
 	header {
 		padding: 10px 20px;
 		.nav-bar {
+			display: none;
 		}
 	}
 }
@@ -117,7 +118,6 @@ header {
 @media (max-width: 450px) {
 	header {
 		.nav-bar {
-			display: none;
 		}
 	}
 }

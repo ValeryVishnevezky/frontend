@@ -10,17 +10,29 @@
 	--foreground-sec: #666666;
 	--primary: #548dd6;
 	--logo: #548dd6;
-	--hover-btn: #c0c0c023;
-	--hover-auth-btn: #548dd6;
+	--hover-nav-btn: #c0c0c023;
+	--hover-btn: #3d74ba;
 	--hover-a: #222222;
 	--border: #22222212;
+	--border-cards: #22222212;
 	--shadow: #22222212;
 	--svg: #9ca3af;
 	--img-gradient: linear-gradient(to bottom right, #f3f4f6, #e5e7eb);
+
 	--in-stock-txt: #166534;
-	--out-of-stock-txt:#991b1b;
+	--out-of-stock-txt: #991b1b;
 	--in-stock-bg: #dcfce7;
-	--out-of-stock-bg:#fee2e2;
+	--out-of-stock-bg: #fee2e2;
+
+	--pending-txt: #78350f;
+	--processing-txt: #1e498a;
+	--delivered-txt: #166534;
+	--cancelled-txt: #991b1b;
+
+	--pending-bg: #fbbf2426;
+	--processing-bg: #52abff26;
+	--delivered-bg: #dcfce7;
+	--cancelled-bg: #fee2e2;
 }
 
 [data-theme='dark'] {
@@ -31,17 +43,33 @@
 	--foreground-sec: #f0f0f0;
 	--primary: #1f335d;
 	--logo: #ffffff;
-	--hover-btn: #ffffff23;
-	--hover-auth-btn: #ffffff23;
-	--hover-a: #afafaf;
+	--hover-nav-btn: #ffffff23;
+	--hover-btn: #141c2f;
+	--hover-a: #f0f0f0;
 	--border: #00000023;
+	--border-cards: #dddddd12;
 	--shadow: #00000053;
 	--svg: #4b5563;
 	--img-gradient: linear-gradient(to bottom right, #242b36, #111113);
+
 	--in-stock-txt: #4ade80;
-	--out-of-stock-txt:#f87171;
+	--out-of-stock-txt: #f87171;
 	--in-stock-bg: #14532d;
-	--out-of-stock-bg:#7f1d1d;
+	--out-of-stock-bg: #7f1d1d;
+
+	--pending-txt: #fbbf24;
+	--processing-txt: #60a5fa;
+	--delivered-txt: #4ade80;
+	--cancelled-txt: #f87171;
+
+	--pending-bg: #fbbf2440;
+	--processing-bg: #3b82f640;
+	--delivered-bg: #14532d;
+	--cancelled-bg: #7f1d1d;
+}
+
+* {
+	box-sizing: border-box;
 }
 
 html {
@@ -50,7 +78,7 @@ html {
 	font-family: var(--font-sans);
 	font-weight: 400;
 	font-size: 16px;
-	letter-spacing: 0.02rem;
+	letter-spacing: 0.05rem;
 }
 
 body {
@@ -73,7 +101,7 @@ p {
 .main-layout {
 	display: grid;
 	grid-template-columns: 40px 1fr 40px;
-    grid-template-rows: auto 1fr auto;
+	grid-template-rows: auto 1fr auto;
 	min-height: 100vh;
 
 	> *.full {
@@ -89,4 +117,12 @@ p {
 	.main-layout {
 		grid-template-columns: 20px 1fr 20px;
 	}
+}
+
+.image-placeholder {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }

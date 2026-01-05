@@ -6,7 +6,7 @@ export default async function ProductsIndex() {
 	const products: Product[] = await query()
 	
 	return (
-		<div className='container mx-auto py-8'>
+		<div className='products-container w-full py-8'>
 			<ProductList products={products} />
 		</div>
 	)
