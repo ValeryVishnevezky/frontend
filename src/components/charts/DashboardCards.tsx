@@ -11,10 +11,10 @@ import { ArrowUp } from '../icons/ArrowUp'
 import { ArrowDown } from '../icons/ArrowDown'
 
 const iconsMap: Record<string, React.ReactNode> = {
-	Currency: <Currency width={20}/>,
-	Product: <Products width={20}/>,
-	Up: <Up width={20}/>,
-	Receipt: <Receipt width={20}/>,
+	Currency: <Currency width={20} />,
+	Product: <Products width={20} />,
+	Up: <Up width={20} />,
+	Receipt: <Receipt width={20} />
 }
 
 export default function DashboardCards({ data, index, range }: DashboardCardProps) {
@@ -48,7 +48,6 @@ export default function DashboardCards({ data, index, range }: DashboardCardProp
 
 	return (
 		<div className='stat-card' style={{ animationDelay: `${index * 700}ms` }}>
-
 			<div className='card-header'>
 				<div className='card-icon'>{icon}</div>
 
@@ -66,7 +65,6 @@ export default function DashboardCards({ data, index, range }: DashboardCardProp
 			<p className='card-subtitle'>
 				vs. {formatValue(data.prevValue, data.format)} prev {range}
 			</p>
-
 		</div>
 	)
 }

@@ -3,9 +3,9 @@ export type Theme = 'light' | 'dark'
 export const THEME_KEY = 'theme'
 
 export function toggleTheme() {
-  const theme = getTheme()
-  const nextTheme = theme === 'dark' ? 'light' : 'dark'
-  setAppTheme(nextTheme)
+	const theme = getTheme()
+	const nextTheme = theme === 'dark' ? 'light' : 'dark'
+	setAppTheme(nextTheme)
 }
 
 export function getTheme(): Theme {
@@ -16,19 +16,18 @@ export function getTheme(): Theme {
 		setAppTheme(stored)
 		return stored
 	}
-  
+
 	const system = getSystemTheme()
 	setAppTheme(system)
 	return system
 }
 
 export function getSystemTheme(): Theme {
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+	return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
 }
 
 function setAppTheme(theme: Theme) {
-  const html = document.documentElement
-  html.setAttribute('data-theme', theme)
-  localStorage.setItem(THEME_KEY, theme)
+	const html = document.documentElement
+	html.setAttribute('data-theme', theme)
+	localStorage.setItem(THEME_KEY, theme)
 }
-

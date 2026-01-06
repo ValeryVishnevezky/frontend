@@ -31,7 +31,8 @@
 		}
 	}
 
-	.btn, .demo-user {
+	.btn,
+	.demo-user {
 		font-size: 1.1rem;
 		padding: 15px;
 		margin-top: 15px;
@@ -46,15 +47,9 @@
 			opacity: 0.9;
 			background-color: var(--hover-btn);
 		}
-
-		/* &:disabled {
-			opacity: 0.6;
-			cursor: not-allowed;
-			transform: none;
-		} */
 	}
 
-	.demo-user{
+	.demo-user {
 		margin-top: 0;
 	}
 }
@@ -69,7 +64,8 @@
 			padding: 10px 15px;
 		}
 
-		.btn, .demo-user {
+		.btn,
+		.demo-user {
 			font-size: 0.9rem;
 			padding: 10px;
 		}

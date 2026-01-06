@@ -14,7 +14,7 @@ export default function LoginSignupForm({ mode }: { mode: string }) {
 
 	function handleChange(ev: React.ChangeEvent<HTMLInputElement>) {
 		const { name, value } = ev.target
-		setCredentials((prevState) => {
+		setCredentials(prevState => {
 			return { ...prevState, [name]: value }
 		})
 		console.log('Submitted', credentials)
@@ -29,7 +29,7 @@ export default function LoginSignupForm({ mode }: { mode: string }) {
 			} else {
 				user = await signup(credentials)
 			}
-			
+
 			console.log('user', user)
 			setUser(user)
 			setCredentials(getEmptyCredentials())
@@ -41,51 +41,15 @@ export default function LoginSignupForm({ mode }: { mode: string }) {
 
 	const { fullname, username, password, email } = credentials
 	return (
-			<form className="form flex" onSubmit={handleSubmit}>
-				{mode === 'signup' && (
-					<input
-						type="text"
-						name="fullname"
-						value={fullname}
-						placeholder="Full name"
-						onChange={handleChange}
-						required
-						autoFocus={mode === 'signup'}
-					/>
-				)}
-				{mode === 'signup' && (
-					<input
-						type="text"
-						name="username"
-						value={username}
-						placeholder="Username"
-						onChange={handleChange}
-						required
-					/>
-				)}
-				<input
-					type="email"
-					name="email"
-					value={email}
-					placeholder="Email"
-					onChange={handleChange}
-					required
-					autoFocus={mode === 'login'}
-				/>
-				<input
-					type="password"
-					name="password"
-					value={password}
-					placeholder="Password"
-					onChange={handleChange}
-					required
-				/>
-				<button className="btn">
-					{mode === 'signup' ? 'Signup' : 'Login'}
-				</button>
-				<button className="demo-user" type='button' onClick={()=> setCredentials(getDemoUser)}>
-					Login with Demo User
-				</button>
-			</form>
+		<form className='form flex' onSubmit={handleSubmit}>
+			{mode === 'signup' && <input type='text' name='fullname' value={fullname} placeholder='Full name' onChange={handleChange} required autoFocus={mode === 'signup'} />}
+			{mode === 'signup' && <input type='text' name='username' value={username} placeholder='Username' onChange={handleChange} required />}
+			<input type='email' name='email' value={email} placeholder='Email' onChange={handleChange} required autoFocus={mode === 'login'} />
+			<input type='password' name='password' value={password} placeholder='Password' onChange={handleChange} required />
+			<button className='btn'>{mode === 'signup' ? 'Signup' : 'Login'}</button>
+			<button className='demo-user' type='button' onClick={() => setCredentials(getDemoUser)}>
+				Login with Demo User
+			</button>
+		</form>
 	)
 }

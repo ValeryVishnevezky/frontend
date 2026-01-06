@@ -5,7 +5,7 @@ import { ImagePlaceholder } from '../icons/ImagePlaceholder'
 import { Product } from '@/types/product'
 import Image from 'next/image'
 
-export default function ProductPreview({ product, onAddOrder }: { product: Product, onAddOrder: (product: Product) => Promise<void> }) {
+export default function ProductPreview({ product, onAddOrder }: { product: Product; onAddOrder: (product: Product) => Promise<void> }) {
 	return (
 		<div className='product-card'>
 			<div className='product-image-container'>

@@ -1,8 +1,8 @@
 export type Credentials = {
-  fullname?: string
-  email: string
-  username?: string
-  password: string
+	fullname?: string
+	email: string
+	username?: string
+	password: string
 }
 
 export interface User {
@@ -16,7 +16,7 @@ export interface User {
 }
 
 export interface AuthContextType {
-  user: User | null
-  setUser: (user: User | null) => void
-  loading?: boolean
+	user: User | null
+	setUser: (user: User | null) => void
+	loading?: boolean
 }

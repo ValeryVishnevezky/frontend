@@ -58,10 +58,6 @@
 			color: var(--foreground);
 			letter-spacing: -0.03em;
 
-			/* &.positive {
-				color: var(--logo);
-			} */
-
 			&.negative {
 				color: var(--cancelled-txt);
 			}

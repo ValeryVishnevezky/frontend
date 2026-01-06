@@ -4,7 +4,6 @@ import { Product } from '@/types/product'
 
 export default async function ProductsIndex() {
 	const products: Product[] = await getProducts()
-	// const products: Product[] = null
 
 	if (!products || products.length === 0) {
 		return (

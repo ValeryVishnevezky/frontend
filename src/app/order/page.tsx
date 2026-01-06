@@ -4,7 +4,6 @@ import { Order } from '@/types/order'
 
 export default async function OrdersIndex() {
 	const orders: Order[] = await getOrders()
-	// const orders: Order[] = null
 
 	if (!orders || orders.length === 0) {
 		return (

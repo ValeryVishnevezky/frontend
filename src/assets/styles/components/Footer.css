@@ -3,11 +3,11 @@ footer {
 	border-top: 1px solid var(--border);
 	display: flex;
 	flex-direction: column;
-	
+
 	.footer-container {
 		align-self: center;
 		display: grid;
-		grid-template-columns:  1fr 1fr 1fr 0.6fr;
+		grid-template-columns: 1fr 1fr 1fr 0.6fr;
 		gap: 40px;
 		padding: 40px 0;
 		width: 100%;
@@ -85,4 +85,4 @@ footer {
 			}
 		}
 	}
-} 
+}

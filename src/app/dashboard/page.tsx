@@ -5,7 +5,6 @@ import { DashboardStats, StatsFilter } from '@/types/dashboard'
 export default async function DashboardIndex() {
 	let filterBy: StatsFilter = { period: 'week' }
 	let stats: DashboardStats = await getStats(filterBy)
-	// const stats: any = null
 
 	if (!stats || Object.keys(stats).length === 0) {
 		return (
