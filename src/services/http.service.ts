@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const BASE_URL = process.env.NODE_ENV === 'production' ? '/api/' : process.env.NEXT_PUBLIC_API_URL
+const BASE_URL = process.env.NODE_ENV === 'production' ? process.env.NEXT_SERVER_API_URL : process.env.NEXT_PUBLIC_API_URL
 
 const axiosRequest = axios.create({
 	baseURL: BASE_URL,
