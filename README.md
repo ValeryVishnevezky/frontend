@@ -1,36 +1,130 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<h1 align="center">Store Project </h1>
 
-## Getting Started
+###
 
-First, run the development server:
+This is a full-stack application with Next.js / React / TypeScript frontend and Hono / Bun backend.
+It provides an interactive dashboard with charts, analytics data, and user management.
 
+![Store Home Page](./public/ListLight.png)
+
+### 📁 Repositories
+
++ Frontend:[https://github.com/ValeryVishnevezky/frontend](https://github.com/ValeryVishnevezky/frontend)
+
++ Backend: [https://github.com/ValeryVishnevezky/backend](https://github.com/ValeryVishnevezky/backend)
+
+### ✅ Features
+
++ User authentication
++ Interactive analytics dashboard
++ Charts with filtering options
++ Responsive layout and dark/light mode
++ Clean code with modular structure
+
+###
+
+## 🚀 Setup & Run Instructions
+
+Install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Create .env file in frontend with environment variables:
+```bash
+NEXT_PUBLIC_API_URL=http://localhost:3000/api/
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Create .env file in backend with environment variables:
+```bash
+MONGODB_URI='mongodb+srv://valery:VJ2AZIom84c1vPXn@shopstreamcluster.alz0y4l.mongodb.net/?appName=ShopStreamCluster'
+DB_NAME='shop_db'
+JWT_SECRET='secret'
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Run the development server:
+```bash
+npm run dev
+```
 
-## Learn More
+#### Open [http://localhost:3030](http://localhost:3030) with your browser to see the result.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 👥 User Management
+To enter the order and dashboard pages, use button "Login with Demo User" that get demo user credentials
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+![Login with demo user](./public/Login.png)
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 📈 Charts & Analytics
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+![Charts & Analytics](./public/Dashboard.png)
+
+To test charts and analytics, you can use select options to filter data by:
++ Last 7 days
++ Last 90 days
++ Last 365 days 
+
+![Select options](./public/Select.png)
+
+### 📦 Orders List
+
+Full responsive orders list with status badges and ability to display options:
++ Rows design
++ Cards design
+
+![Orders List Rows](./public/Rows.png)
+![Orders List Cards](./public/Cards.png)
+
+### ☀️ Theme Support
+
+App provides dark and light theme support with toggle button
+
+![Theme Toggle](./public/Theme.png)
+
+### Products List
+
+Full responsive products list with
+to display stok status
+
+Light Theme:
+![Theme Toggle](./public/ListLight.png)
+
+Dark Theme:
+![Theme Toggle](./public/ListDark.png)
+
+## 🏗️ Architecture & Design
+### Frontend:
+
++ Framework: Next.js 16.1 + React
++ UI & Components: UI components, custom hooks for theme and user, charts, and data fetching
++ Charts: Chart.js
++ State Management: React useState / useEffect
++ Features:
++ + Interactive charts
++ + Date range selection
++ + Dark/light theme toggle
+
+### Backend
++ Framework: Hono (Node.js)
++ Database: MongoDB
++ Authentication: JWT, cookies
++ Routes:
+
++ + /auth — login/signup/logout
++ + /stats — analytics data
++ + /users — user CRUD
++ + /products — product CRUD
++ + /orders — order CRUD
+
++ Error Handling: centralized middleware auth checks
+
+### Data Flow
+
+1. Frontend requests data from backend via authenticated API calls.
+2. Backend validates JWT token from cookies and returns data.
+3. Frontend dynamically renders UI components based on the received data.
+
+## 🛠️ Technologies Used
++ Frontend: Next.js, React, TypeScript, Chart.js, Tailwind CSS
++ Backend: Hono, Bun, MongoDB, JWT
