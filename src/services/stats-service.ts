@@ -1,11 +1,11 @@
 import { get } from './http.service'
 import { getCookies } from './cookies-service'
-import { StatsCollection } from '@/types/stats'
+import { DashboardStats, StatsFilter } from '@/types/dashboard'
 
 const BASE_URL = 'stats'
 
-export async function getStats(): Promise<StatsCollection> {
+export async function getStats(filterBy: StatsFilter = {}): Promise<DashboardStats> {
 	const cookies = await getCookies()
-	const res = await get<StatsCollection>(BASE_URL, undefined, cookies)
+	const res = await get<DashboardStats>(BASE_URL, filterBy, cookies)
 	return res
 }

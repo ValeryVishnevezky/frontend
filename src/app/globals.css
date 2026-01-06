@@ -17,6 +17,7 @@
 	--border-cards: #22222212;
 	--shadow: #22222212;
 	--svg: #9ca3af;
+	--dash-svg: #548dd6;
 	--img-gradient: linear-gradient(to bottom right, #f3f4f6, #e5e7eb);
 
 	--in-stock-txt: #166534;
@@ -50,6 +51,7 @@
 	--border-cards: #dddddd12;
 	--shadow: #00000053;
 	--svg: #4b5563;
+	--dash-svg: #1f335d;
 	--img-gradient: linear-gradient(to bottom right, #242b36, #111113);
 
 	--in-stock-txt: #4ade80;
@@ -119,6 +121,18 @@ p {
 	}
 }
 
+@keyframes slide-up {
+	from {
+		opacity: 0;
+		transform: translateY(8px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
 .image-placeholder {
 	position: absolute;
 	inset: 0;
@@ -133,6 +147,7 @@ p {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+
 	.list-empty {
 		display: flex;
 		flex-direction: column;

@@ -1,0 +1,120 @@
+.dashboard {
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	gap: 24px;
+	width: 100%;
+	max-width: 1200px;
+
+	.dashboard-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		gap: 10px;
+
+		.dashboard-title {
+			h1 {
+				font-size: 2rem;
+				font-weight: 700;
+				color: var(--foreground);
+				margin-bottom: 0.5rem;
+			}
+
+			p {
+				font-size: 1rem;
+				color: var(--foreground-sec);
+			}
+		}
+
+		.dashboard-date-range {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 0.5rem;
+			padding: 0 15px;
+			border: 1px solid var(--border-cards);
+			border-radius: 8px;
+			background-color: var(--background);
+			width: fit-content;
+
+			&::after {
+				content: '▼';
+				position: absolute;
+				right: 15px;
+				opacity: 0.8;
+				color: var(--foreground-sec);
+			}
+			&:hover::after {
+				color: var(--logo);
+			}
+			&:focus-within::after {
+				color: var(--logo);
+			}
+
+			select {
+				appearance: none;
+				background-color: transparent;
+				border: none;
+				outline: none;
+				color: var(--foreground);
+				font-size: 0.9rem;
+				cursor: pointer;
+				padding: 15px;
+				padding-right: 24px;
+				transition: color 0.2s ease-in-out;
+
+				&:hover {
+					color: var(--logo);
+				}
+
+				&:focus {
+					color: var(--logo);
+				}
+
+				option {
+					background-color: var(--background);
+					color: var(--foreground);
+					padding: 8px;
+				}
+			}
+		}
+	}
+	.dashboard-charts-container {
+		display: grid;
+		grid-template-columns: 1.5fr 1fr;
+		align-items: center;
+		justify-content: center;
+		gap: 20px;
+		min-height: 30vh;
+		height: 100%;
+	}
+
+}
+
+@media (max-width: 800px) {
+	.dashboard{
+
+		.dashboard-header {
+			flex-direction: column;
+			align-items: stretch;
+			
+			.dashboard-date-range {
+				width: 100%;
+			}
+		}
+		
+		.dashboard-barchart-container {
+			padding: 0 20px;
+		}
+		
+		.dashboard-charts-container {
+			display: grid;
+			grid-template-columns: 1fr;
+			align-items: center;
+			justify-content: center;
+			gap: 20px;
+			height: 100%;
+		}
+	}
+}
