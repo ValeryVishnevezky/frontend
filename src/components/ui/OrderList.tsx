@@ -1,3 +1,5 @@
+'use client'
+
 import '@/assets/styles/components/OrderList.css'
 import OrderPreview from './OrderPreview'
 import { Order } from '@/types/order'

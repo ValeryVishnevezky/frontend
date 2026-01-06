@@ -1,3 +1,5 @@
+'use client'
+
 import '@/assets/styles/components/OrderList.css'
 import { ImagePlaceholder } from '../icons/ImagePlaceholder'
 import { Order } from '@/types/order'

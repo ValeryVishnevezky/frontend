@@ -1,9 +1,11 @@
+'use client'
+
 import '@/assets/styles/components/ProductList.css'
 import { ImagePlaceholder } from '../icons/ImagePlaceholder'
 import { Product } from '@/types/product'
 import Image from 'next/image'
 
-export default function ProductPreview({ product }: { product: Product }) {
+export default function ProductPreview({ product, onAddOrder }: { product: Product, onAddOrder: (product: Product) => Promise<void> }) {
 	return (
 		<div className='product-card'>
 			<div className='product-image-container'>
@@ -29,7 +31,7 @@ export default function ProductPreview({ product }: { product: Product }) {
 					<div>
 						<span className='product-price'>₪{product.price.toLocaleString('he-IL')}</span>
 					</div>
-					<button className='add-to-cart-button' disabled={!product.inStock}>
+					<button onClick={() => onAddOrder(product)} className='add-to-cart-button' disabled={!product.inStock}>
 						Add to Cart
 					</button>
 				</div>

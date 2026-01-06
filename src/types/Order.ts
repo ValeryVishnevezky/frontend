@@ -3,13 +3,15 @@ export interface ProductInfo {
 	name: string
 	price: number
 	category: string
-	imgUrl?: string
+	imgUrl?: string | null
+	inStock: boolean
 }
 
 export interface CustomerInfo {
 	_id: string
 	username: string
 	email: string
+	fullname: string
 }
 
 export interface Order {
@@ -20,4 +22,11 @@ export interface Order {
 	quantity: number
 	totalPrice: number
 	createdAt: Date
+}
+
+export interface OrderToSave {
+	_id?: any
+	product: ProductInfo
+	customer: CustomerInfo
+	quantity: number
 }
